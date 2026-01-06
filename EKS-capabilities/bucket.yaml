@@ -1,0 +1,25 @@
+apiVersion: s3.services.k8s.aws/v1alpha1
+kind: Bucket
+metadata:
+  name: my-production-bucket-830427153490
+spec:
+  name: my-production-bucket-830427153490
+  versioning:
+    status: Enabled
+  encryption:
+    rules:
+      - applyServerSideEncryptionByDefault:
+          sseAlgorithm: AES256
+  lifecycle:
+    rules:
+      - id: delete-old-versions
+        filter:
+          prefix: ""
+        status: Enabled
+        noncurrentVersionExpiration:
+          noncurrentDays: 90
+  publicAccessBlock:
+    blockPublicACLs: true
+    blockPublicPolicy: true
+    ignorePublicACLs: true
+    restrictPublicBuckets: true
