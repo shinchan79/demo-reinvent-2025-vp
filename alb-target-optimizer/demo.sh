@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ############################################
-# CONFIG – FIX CỨNG THEO MÔI TRƯỜNG CỦA BẠN
+# CONFIG
 ############################################
 CLUSTER_NAME="test-cluster"
 REGION="ap-southeast-1"
